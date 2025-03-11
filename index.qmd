@@ -1,0 +1,34 @@
+---
+title: "Notation & Subject Index"
+description: |
+    For [My Notes](https://162348.github.io/)
+bibliography: 
+    - assets/2023.bib
+    - assets/2024.bib
+    - assets/2025.bib
+csl: assets/apalike.csl
+# include-in-header: 
+#     - text: |
+#         <style>
+#         h1, h2, h3, h4, h5, p, li, .title, .description, .small-letter {
+#             font-family: "Gill Sans", sans-serif !important;
+#             font-weight: 400;
+#             font-style: normal;
+#         }
+#         </style>
+---
+
+{{< include assets/_preamble.qmd >}}
+
+> Do not laugh at notations; invent them, they are powerful.<br>In fact, **mathematics is, to a large extent, invention of better notations**.<br>--- [The Feynman Lectures on Physics](https://www.feynmanlectures.caltech.edu/I_17.html).
+
+## 全体を通しての注
+
+* 最もよく使う記号にはローマン体またはイタリック体を用いた．紙や黒板に書く際にも便利だからである．
+
+* あらゆる数学概念は，[ZFC公理系](https://ja.wikipedia.org/wiki/公理的集合論#集合の公理系) の下で集合として定義する．^[集合のなす圏 $\Set$ は数学の基礎付けとして採用するのに極めて良い性質を持つ [nLab](https://ncatlab.org/nlab/show/Set#properties)．]
+* 記号 $:=$ は「右辺によって左辺を定義し，その結果等号が成り立つ」という主張の略記である．^[[@DelMoral-Penev2014], [@Helemskii2006], [@MacKay2003 p.600] に一致する．$\equiv,\overset{\text{def}}{=}$ などもよく用いられる．[@Crisan-Doucet2002], [@Smith2010] では $\overset{\triangle}{=}$ も用いられる．ここでは，これらの左右対称な記号は避けた．また，$=_{\text{df}}$ などを使うものもある [@Quine-Szczotka1994]．]
+
+<!-- 
+1. We prioritize easy-to-read notations. Particularly, we use italic and roman as much as possible.
+2. Superscripts suggest contravariance, while subscripts suggest covariance. -->

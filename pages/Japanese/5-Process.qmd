@@ -1,0 +1,130 @@
+---
+title: "過程"
+bibliography: 
+    - ../../assets/2023.bib
+    - ../../assets/2024.bib
+    - ../../assets/2025.bib
+csl: ../../assets/apalike.csl
+---
+
+{{< include ../../assets/_preamble.qmd >}}
+
+
+確率過程の概念は初め解析学と深く結びついて発展した．その後，確率論と統計学，そして物理学などの自然科学や社会科学の分野で，重要なモデリングの道具としても広く使われるようになった．
+
+
+
+### 収束 {#subsec-convergence}
+
+
+
+* 確率変数列 $\{X_n\}\subset\L(\Om;E)$ が，$X\in\L(\Om;E)$ に
+  * 確率収束することを $X_n\pto X$ と表す．
+  * 法則収束することを $X_n\dto X$ または $X_n\Rightarrow X$ で表す．^[[@Nualart2018] などでは $\xrightarrow{\L}$ でも表される．]
+
+* 確率変数列 $\{X_n\}\subset\L(\Om)$ が **一様に緊密** であることを
+$$
+X_n=O_p(1)
+$$
+とも表す．^[[@vanderVaart1998 p.12] 2.2 に倣った．一様緊密性は [@LeCam57-ConvergenceInD] による概念である．]
+
+* さらに確率変数列 $\{R_n\}\subset\L(\Om)$ について，
+$$
+X_n=O_P(R_n)
+$$
+であるとは，ある一様に緊密な列 $\{Y_n\}\subset\L(\Om)$ が
+$$
+X_n=Y_nR_n
+$$
+と表せることをいう．
+
+* 同様にして，
+$$
+X_n= o_P(R_n)
+$$
+であるとは，ある $0$ に確率収束する列 $\{Y_n\}\subset\L(\Om)$ が存在して
+$$
+X_n=Y_nR_n
+$$
+と表せることをいう．
+
+
+
+
+### 確率基底 {#subsec-stochastic-basis}
+
+
+
+[**（確率）過程**](https://ja.wikipedia.org/wiki/%E7%A2%BA%E7%8E%87%E9%81%8E%E7%A8%8B) と言ったとき，共通の確率空間 $(\Om,\F,\P)$ を定義域に持ち，値域 $E$ も共通とする確率変数の族 $\{X_t\}_{t\in T}\subset\L(\Om;E)$ を指すこととする．^[積空間 $(\cX^T,\cC)$ に値を取る $\cX^T$-値確率変数とみなすことに同値になる [nLab](https://ncatlab.org/nlab/show/stochastic+process)．積の普遍性が成り立つためである [@Kallenberg2021 p.15] 補題1.9．だが $\cX$ が位相空間であるとき，$\cX^T$ の Borel $\sigma$-代数に $\B(\cX^T)$ ついても可測になるとは限らない．$X_t$ の終域 $\cX$ が 可分距離空間で，かつ $T$ が可算集合であるときは，$\B(\cX^T)=\cC$ であるため，$\B(\cX^T)/\F$-可測であることとも同値になる [@Kallenberg2021 p.11] 補題1.2．]
+
+* 確率過程 $\{X_t\}_{t\in T}\subset\L(\Om;E)$ が積空間 $E^T$ に定める写像
+$$
+X_-:\Om\to E^T
+$$
+を **転置** と呼ぶ．^[筆者が考案した名称．族 $(X_t)_{t\in T}:T\to\L(\Om)$ としての見方と転置の関係になっているところから．[@伊藤清1991 p.232] は **見本過程（関数）** と呼び，記法 $X_\bullet$ を採用している．[@Baudoin2014-DiffusionProcess p.9] は application と呼んでいる．]
+
+* 関数 $f:\R\supset T\to\X$ が [**第一種不連続**](https://ja.wikipedia.org/wiki/%E4%B8%8D%E9%80%A3%E7%B6%9A%E6%80%A7%E3%81%AE%E5%88%86%E9%A1%9E) であるとは，常に左極限を持つ右連続関数であることをいう．^[「第一種不連続」とは [@伊藤清1991 p.227] の用語．[@LeGall2016 p.168] では $\mathbb{D}(\X)$, [@Jacod-Shiryaev2003 p.325] では $\mathbb{D}(\X)$ と表す．]
+  * このような関数の全体を $D(T;\X)$ で表す．
+  * 特に $T=\R_+$ の場合は $D(\X):=D(\R_+;\X)$ と略記する．
+
+* $x\in D_E(T)$ について，左極限を
+$$
+x(t-):=\lim_{s\nearrow t}x(s)
+$$
+と表し，跳躍の大きさを
+$$
+\Delta x(t):=x(t)-x(t-)
+$$
+で表す．^[[@Jacod-Shiryaev2003 p.325], [@Protter2005 p.25] に倣った．] ただし，$x(0-)=x(0)$ とする．^[[@Jacod-Shiryaev2003 p.3] に倣った．この結果，$\Delta x(0)=0$ であることに注意．]
+
+* 確率空間 $(\Om,\F,\P)$ 上の [**情報系**](https://ja.wikipedia.org/wiki/%E6%83%85%E5%A0%B1%E7%B3%BB) $(\F_t)_{t\in\R_+}$ とは，右連続性
+$$
+\F_t=\F_{t+}:=\bigcap_{s>t}\F_s
+$$
+を満たす増大系 $\F_s\subset\F_t\;(s\le t)$ をいう．^[フィルトレーションと言ったときに右連続性も課すのは [@Jacod-Shiryaev2003], [@Protter2005] に倣った．記法は [@伊藤清1991 p.239] に倣った．]
+
+* 加えて，
+$$
+\F_{t-}:=\bigvee_{s<t}\F_s,\quad(t\in\ov{\R}_+),
+$$
+と表す．^[[@Jacod-Shiryaev2003 p.2] 定義1.2, [@Bass2011 p.1], [@Dellacherie-Meyer1978 p.114], [@Revuz-Yor1999 p.42] に倣った．]
+
+* 確率空間 $(\Om,\F,\P)$ とその上の情報系 $(\F_t)_{t\in\R_+}$ からなる 4-組 $(\Om,\F,(\F_t),\P)$ を [**確率基底**](https://encyclopediaofmath.org/wiki/Stochastic_basis) という．
+
+* 確率基底が **完備** であるとは，
+$$
+\cN(\P)\subset\F_0
+$$
+を満たすことをいう．^[右連続性と完備性を併せて，フィルトレーション付き確率空間 $(\Om,\F,(\F_t),\P)$ の **通常の条件** ともいう．[@Protter2005 p.3] など参照．]
+
+
+
+### 可測性 {#subsec-measurability}
+
+
+
+* 過程 $\{X_t\}_{t\in\R}$ がフィルトレーション $(\F_t)$ に **適合的** であるとは，
+$$
+X_t\in\F_t\quad(t\in\R)
+$$
+を満たすことをいう．
+
+* 第一種不連続な見本道を持つ適合的な過程の全体を $\bD$ で表す．一方で，[càglàd](https://en.wikipedia.org/wiki/C%C3%A0dl%C3%A0g) な見本道を持つ適合的な過程の全体を $\bL$ で表す．^[[@Protter2005 p.56]．]
+
+
+
+### 停止時^[[@Dellacherie-Meyer1978] 49 115-IV では **随意時刻** (optional time) とも呼んでおり，stopping time を older terminology ともしている．筆者も optional time の語がしっかり普及すれば良かったのにと思う．] {#subsec-stopping-time}
+
+
+
+* 確率基底 $(\Om,\F,(\F_t),\P)$ 上の **停止時** とは，同じ確率空間 $\Om$ 上の可測関数 $T:\Om\to[0,\infty]$ であって，
+$$
+\Brace{T\le t}\in\F_t,\qquad t\in\R_+,
+$$
+も満たすものをいう．^[[@Jacod-Shiryaev2003 p.4] 1.11，[@Protter2005 p.3] に従った．]
+
+* 停止時 $T$ までの **情報** とは，
+$$
+\F_T:=\Brace{A\in\F_\infty\mid\forall_{t\in\R_+}\;A\cap\Brace{T\le t}\in\F_t}
+$$
+で定まる $\sigma$-代数をいう．

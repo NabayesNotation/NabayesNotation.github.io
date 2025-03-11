@@ -1,0 +1,58 @@
+---
+title: "Fourier 変換"
+bibliography: 
+    - ../../assets/2023.bib
+    - ../../assets/2024.bib
+    - ../../assets/2025.bib
+csl: ../../assets/apalike.csl
+---
+
+{{< include ../../assets/_preamble.qmd >}}
+
+
+* [Heaviside の階段関数](https://ncatlab.org/nlab/show/step+function) $H:\R\to2$ を
+$$
+H(x):=1_{[0,\infty]}
+$$
+で表す．^[[@木田良才2020 p.98] 例9.5 に一致する．神経の数理モデルの文脈では，しきい関数 (threshold function) とも呼ばれる [@人工知能学会2015 p.10]．]
+
+* [**符号関数**](https://ncatlab.org/nlab/show/sign+function) を
+$$
+\sgn(x):=2H(x)-1
+$$
+で定める．^[[@木田良才2020 p.131] 例12.21 に一致する．[@LeGall2016 p.161] では $\sgn=1_{(0,\infty)}-1_{\ocinterval{-\infty,0}}$，[@Evans2010 p.700], [@Jacob2001] では $\sgn=1_{(0,\infty)}-1_{(-\infty,0)}$ と定めている（$0$での値が違う）．]
+
+* 関数 $f,g$ の [**畳み込み**](https://ncatlab.org/nlab/show/convolution+product) を
+$$
+(f_1*f_2)(x):=\int_\R f_1(t)f_2(x-t)\,dt
+$$
+で表す．
+
+### 超関数 {#subsec-generalized-functions}
+
+
+
+* $\D(\R^d):=C_c^\infty(\R^d)$ とも表す．^[この記法は Laurent Schwartz 以来慣習的に残り続けているので，ここでもそれに従う．[@Hormander2003 p.34]．] その双対空間は $\D'(\R^d)$ と表し，その元を [**超関数**](https://ja.wikipedia.org/wiki/%E8%B6%85%E9%96%A2%E6%95%B0) という．^[[@Jacob2001]．]
+
+
+
+### 確率解析 {#subsec-stochastic-analysis}
+
+
+
+* $E,F$ を可微分多様体とする．２変数関数 $f:E\times F\to\R$ について，
+
+\begin{align*}
+    C^{1,2}(E\times F)&:=\bigg\{f:E\times F\to\R\;\bigg|\:\substack{\forall_{y\in F}\;f(-,y)\in C^1(E)\\\forall_{x\in E}\;f(x,-)\in C^2(F)}\bigg\}
+\end{align*}
+
+と表す．^[[@Baudoin2014-DiffusionProcess p.69] 定理3.9，[@Nualart2018 p.31] に一致する．]
+
+### 作用素
+
+* The **domain** of the operator $T$ is denoted by $\cD(T)$.
+
+* The **graph** of the operator $T:X\to Y$ is denoted by
+  $$
+  \cG(T):=\Brace{x\oplus Tx\in X\oplus Y\mid x\in\cD(T)}.
+  $$

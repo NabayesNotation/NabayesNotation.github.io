@@ -1,0 +1,47 @@
+---
+title: "確率空間"
+bibliography: 
+    - ../../assets/2023.bib
+    - ../../assets/2024.bib
+    - ../../assets/2025.bib
+csl: ../../assets/apalike.csl
+---
+
+{{< include ../../assets/_preamble.qmd >}}
+
+
+* $(\Om,\F,\rP)$ を標準的な **確率空間** とする．^[[@Nualart2018] に倣った．[@Gine-Nickl2021], [@Dudley2002] では $\mathrm{Pr}$ と表している．[@Villani2009] などは $\mathbb{P}$ で表す．] よって，明示せずとも，確率変数 $X$ と言ったときは $\L(\Om,\F,\rP)$ の元とする．
+
+* **Polish 確率空間** と言ったとき，[Polish 空間](https://ja.wikipedia.org/wiki/%E3%83%9D%E3%83%BC%E3%83%A9%E3%83%B3%E3%83%89%E7%A9%BA%E9%96%93) $E$ 上の Borel 可測空間 $(E,\B(E))$ 上の確率空間を指す．^[[**標準 Borel 空間**](https://en.wikipedia.org/wiki/Standard_Borel_space) ともいう．]
+
+* 期待値作用素を
+$$\E:L(\Om)\to[-\infty,\infty]$$
+で表す．^[[@Nualart2018 p.1] に倣った．[@Gine-Nickl2021] ではイタリック体で $E$ と表している．[@DelMoral-Penev2014], [@Dellacherie-Meyer1978] では $\bE$ を用いる．[@MacKay2003 p.599] では $\cE$ を用いる．$\brac{-}$ で表すこともある．]
+
+* 期待値作用素と確率測度の引数は
+$$\E[X],\quad\P[X\in A]$$
+と角括弧内に記する．^[[@吉田朋広2006-数理統計 p.5] に倣った．筆者は $\E,\P$ のいずれも作用素と見る立場に立つためである．[@Gine-Nickl2021] は $E[X],\mathrm{Pr}\{X\in A\}$ と表す．[@Nualart2018], [@伊藤清1991] はいずれも丸括弧である．[@鎌谷20-モンテカルロ], [@Bain-Crisan2009-StochasticFiltering] では $\bP(-),\bE[-]$ を用いている．[@DelMoral-Penev2014] では $\bE(-),\bP(-)$ を用いる．]
+
+* 確率変数 $X\in\L(\Om)$ と事象 $A\in\F$ に関して，次の略記を用いる：
+$$
+\E[X,A]:=\E[X1_A]=\int_AX(\om)\P(d\om).
+$$
+
+* 分散と共分散は $\V[X],\C[X,Y]$ と表す．^[$V$ は [@伊藤清1991] に，$C$ は [@Gine-Nickl2021 p.66] に倣った，いずれもイタリック体を用いていたが．[@吉田朋広2006-数理統計 p.23], [@鎌谷20-モンテカルロ], [@DelMoral-Penev2014 p.xlvii] は代わりに $\Var,\Cov$ を用いている．]
+
+* 確率変数 $X\in\L(\Om;\X)$ による測度 $\P$ の [押し出し](https://en.wikipedia.org/wiki/Pushforward_measure) を
+$$\P^X:=X_*\P\in\cP(\X)$$
+で表し，これを $X$ の **分布** という．^[[@伊藤清1991 p.125] に従った．ここでは **像測度** と **確率法則** と呼んでいる．像測度の呼び名は [@Bogachev2007 p.190] 3.6節, [@Kechris1995 p.103], [@Villani2009] にも一致する．[@Bogachev2007 p.190] では $\P\circ X^{-1}$，[@Villani2009] では $X_\#\P$ と表す．[nLab](https://ncatlab.org/nlab/show/pushforward+measure) も参照．]
+
+* この関係を $X\sim\P^X$ とも表す．
+
+* 確率変数 $X$ の分布 $\P^X$ を $\L[X]\in\cP(\cX)$ とも表す．^[[@Villani2009] は $\mathrm{law}\,(X)$ で表す．]
+
+* 2つの確率変数 $X,Y\in\L(\Om)$ の分布が等しいとき，$X\deq Y$ とも表す．^[[@Nair+2022 p.246] に一致．]
+
+* $X\indep Y$ とは確率変数 $X,Y$ が [**独立**](https://ja.wikipedia.org/wiki/%E7%8B%AC%E7%AB%8B_(%E7%A2%BA%E7%8E%87%E8%AB%96)) であることを表す．^[これは [@Dawid1979] が先駆けであり， Dawid notation と呼ばれる．[@DelMoral-Penev2014 p.xlvii] は $\perp$ を用いる．]
+
+* 確率変数 $X:\Om\to\cX,Y:\cX\to\cY$ について，$Y(X)$ によって合成関数 $Y\circ X:\Om\to\cY$ を表す．
+
+なお，確率変数，推定量，統計量とは，確率空間上の可測関数の，特定の意図を持った別名称に他ならない．^[[nLab (Concept with an Attitude)](https://ncatlab.org/nlab/show/concept+with+an+attitude#random_variables_and_estimators) も参照．]
+

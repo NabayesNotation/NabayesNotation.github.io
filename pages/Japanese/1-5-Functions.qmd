@@ -1,0 +1,76 @@
+---
+title: "写像"
+bibliography: 
+    - ../../assets/2023.bib
+    - ../../assets/2024.bib
+    - ../../assets/2025.bib
+csl: ../../assets/apalike.csl
+---
+
+{{< include ../../assets/_preamble.qmd >}}
+
+* $R$ を環とする．$f_1,f_2\in R^X$ に対して，
+$$
+(f_1+f_2)(x):=f_1(x)+f_2(x),
+$$
+$$
+(f_1f_2)(x):=f_1(x)f_2(x)
+$$
+で定める演算により $R^X$ も環とみなし，定値関数 $f\equiv a\in R$ を $R$ の元と同一視する．^[[@DelMoral04-FeynmanKacFormulae p.7] も参照．]
+
+* [束](https://ja.wikipedia.org/wiki/%E6%9D%9F_(%E6%9D%9F%E8%AB%96)) $L$ の元 $a,b$ に対して，上限と下限を
+$$
+a\lor b:=\sup\{a,b\},
+$$
+$$
+a\land b:=\inf\{a,b\},
+$$
+で表す．^[[@DelMoral-Penev2014 p.xlvii], [@Bogachev2007 p.277] 4.1.(i) に一致する．[@Bogachev2007 p.277] では lattice を structure ともいう．]
+
+* $\{\F_i\}_{i\in I}$ を 集合 $X$ の元がなす $\sigma$-代数の族とすると，これらの合併が生成する $\sigma$-代数を
+$$
+\bigvee_{i\in I}\F_i:=\sigma\paren{\bigcup_{i\in I}\F_i}
+$$
+と表す．^[[@Dellacherie-Meyer1978], [@伊藤清1991 p.137] に倣った．]
+
+* $0$ を持つ束においては次の略記を使う：^[[@Jacob2001] など，$a^+,a^-$ を用いる流儀もある．]
+$$a_+:=a\lor0,$$
+$$a_-:=-(a\land 0).$$
+
+* 順序集合 $Y$ に値を取る関数 $f,g\in\Map(X,Y)$ について，$f\le g$ とは
+$$
+\forall_{x\in X}\;f(x)\le g(x)
+$$
+の略記とする．
+
+* 同じ条件を，[一階の量化記号](https://ja.wikipedia.org/wiki/%E4%B8%80%E9%9A%8E%E8%BF%B0%E8%AA%9E%E8%AB%96%E7%90%86) $\forall$ を省略して
+$$
+f(x)\le g(x)\quad(x\in X)
+$$
+または $f\le g$ とも略記する．
+
+* $Y$ が束であるとき，この順序により関数の空間 $\Map(X,Y)$ は束となり，演算 $\land,\lor$ が定まる．
+
+* 関数の列 $\{f_n\}\subset Y^X$ について，$f_n\nearrow f$ とは，収束 $f_n\to f$ だけでなく，$\{f_n\}$ が単調増加であることも含意する．^[[@Jacob2001] に一致．]
+
+* 関数 $g:\R\to\R$ に対して
+$$
+O(g(x))\;(x\to x_0)$$
+とは，条件
+$$
+\limsup_{x\to x_0}\Abs{\frac{f(x)}{g(x)}}<\infty
+$$
+を満たす関数 $f:\R^+\to\R$ の全体とする．^[[nLab](https://ncatlab.org/nlab/show/asymptotic+notation) に従った．$O$ は写像 $\R^\R\to P(\R^\R)$ を定める．[@Cramer1946 p.122], [@Jacod-Protter2012], [@DelMoral-Penev2014 p.xlvii], [@Evans2010 p.704] に一致．]
+
+* ただし，$O(g)$ はその任意の元を表すとして，
+$$
+f(x)=O(g(x))\quad(x\to x_0)
+$$
+を $f(x)\in O(g(x))\;(x\to x_0)$ の意味でも使う．
+
+* 同様にして，$f(x)=o(g(x))\;(x\to x_0)$ を
+$$
+\lim_{x\to x_0}\frac{f(x)}{g(x)}\to0
+$$
+を満たすこととする．
+

@@ -1,0 +1,188 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - "**/*.qmd"
+
+website:
+  title: "Notation"
+  search: false
+  navbar:
+    title: false
+    tools:
+      - icon: twitter-x
+        text: X
+        href: https://x.com/_iammana
+      - icon: github
+        text: GitHub
+        href: https://github.com/manasakai
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - text: "Introduction"
+        href: "index.qmd"
+      - section: "基本的構成"
+        contents:
+          - text: "集合"
+            href: "pages/Japanese/1-1-Sets.qmd"
+          - text: "数"
+            href: "pages/Japanese/1-2-Numbers.qmd"
+          - text: "写像"
+            href: "pages/Japanese/1-3-Maps.qmd"
+          - text: "圏"
+            href: "pages/Japanese/1-4-Category.qmd"
+          - text: "関数"
+            href: "pages/Japanese/1-5-Functions.qmd"
+      - section: "空間"
+        contents:
+          - text: "位相空間"
+            href: "pages/Japanese/2-1-Topology.qmd"
+          - text: "線型空間"
+            href: "pages/Japanese/2-2-LinearSpace.qmd"
+          - text: "ノルム空間"
+            href: "pages/Japanese/2-3-NormedSpace.qmd"
+          - text: "可測空間"
+            href: "pages/Japanese/2-4-MeasurableSpace.qmd"
+          - text: "確率空間"
+            href: "pages/Japanese/2-5-ProbabilitySpace.qmd"
+      - section: "カーネル"
+        contents:
+          - text: "測度"
+            href: "pages/Japanese/3-1-Meausre.qmd"
+          - text: "確率分布"
+            href: "pages/Japanese/3-2-Distribution.qmd"
+          - text: "確率核"
+            href: "pages/Japanese/3-3-Kernel.qmd"
+          - text: "関数空間"
+            href: "pages/Japanese/3-4-FunctionSpace.qmd"
+          - text: "作用素"
+            href: "pages/Japanese/3-5-Operator.qmd"
+      - section: "作用素"
+        contents:
+          - text: "微分作用素"
+            href: "pages/Japanese/4-1-Differential.qmd"
+          - text: "Fourier 変換"
+            href: "pages/Japanese/4-2-FourierTransform.qmd"
+      - section: "過程"
+        contents:
+          - text: "過程"
+            href: "pages/Japanese/5-Process.qmd"
+      
+format:
+  html:
+    mainfont: "BIZ UDPGothic"
+    css: assets/styles.css
+    theme: minty
+    title-block-banner: true
+    page-layout: full
+    # include-before-body:
+    #   - text: |
+    #       <script>
+    #         document.addEventListener('DOMContentLoaded', function () {
+    #           const navbar = document.querySelector('.navbar');
+    #           if (navbar) {
+    #             // Get current URL
+    #             const currentPage = window.location.pathname;
+
+    #             // Initial navigation bar (including title)
+    #             let navbarContent = `
+    #             <div class="navbar-item">
+    #                 <a href="/index.html" style="font-size: 1.5em; font-weight: bold;">Mana Sakai</a>
+    #               </div>
+    #               `;
+
+    #             // Set button HTML
+    #             let buttonHTML = '';
+    #             if (currentPage.includes('index.html')) {
+    #               // When on English pages
+    #               navbarContent += `
+    #                 <div class="navbar-item">
+    #                   <a href="/index.html">Home</a>
+    #                 </div>
+    #                 <div class="navbar-item">
+    #                   <a href="/pages/research.html">Research</a>
+    #                 </div>
+    #               `;
+    #               buttonHTML = `
+    #                 <button onclick="location.href='/pages/home_jp.html'">
+    #                   <i class="bi bi-globe" style="font-size: 1.3em; vertical-align: middle;"></i>
+    #                   日本語
+    #                 </button>
+    #               `;
+    #             } else if (currentPage.includes('home_jp.html')) {
+    #               // When on the Japanese Home page
+    #               navbarContent += `
+    #                 <div class="navbar-item">
+    #                   <a href="/pages/home_jp.html">ホーム</a>
+    #                 </div>
+    #                 <div class="navbar-item">
+    #                   <a href="/pages/research_jp.html">研究</a>
+    #                 </div>
+    #               `;
+    #               buttonHTML = `
+    #                 <button onclick="location.href='/index.html'">
+    #                   <i class="bi bi-globe" style="font-size: 1.3em; vertical-align: middle;"></i>
+    #                   English
+    #                 </button>
+    #               `;
+    #             } else if (currentPage.includes('research.html')) {
+    #               // When on the English Research page
+    #               navbarContent += `
+    #                 <div class="navbar-item">
+    #                   <a href="/index.html">Home</a>
+    #                 </div>
+    #                 <div class="navbar-item">
+    #                   <a href="/pages/research.html">Research</a>
+    #                 </div>
+    #               `;
+    #               buttonHTML = `
+    #                 <button onclick="location.href='/pages/research_jp.html'">
+    #                   <i class="bi bi-globe" style="font-size: 1.3em; vertical-align: middle;"></i>
+    #                   日本語
+    #                 </button>
+    #               `;
+    #             } else if (currentPage.includes('research_jp.html')) {
+    #               // When on the Japanese Research page
+    #               navbarContent += `
+    #                 <div class="navbar-item">
+    #                   <a href="/pages/home_jp.html">ホーム</a>
+    #                 </div>
+    #                 <div class="navbar-item">
+    #                   <a href="/pages/research_jp.html">研究</a>
+    #                 </div>
+    #               `;
+    #               buttonHTML = `
+    #                 <button onclick="location.href='/pages/research.html'">
+    #                   <i class="bi bi-globe" style="font-size: 1.3em; vertical-align: middle;"></i>
+    #                   English
+    #                 </button>
+    #               `;
+    #             } else {
+    #               // Default navigation bar
+    #               navbarContent += `
+    #                 <div class="navbar-item">
+    #                   <a href="/index.html">Home</a>
+    #                 </div>
+    #                 <div class="navbar-item">
+    #                   <a href="/pages/research.html">Research</a>
+    #                 </div>
+    #               `;
+    #               buttonHTML = `
+    #                 <button onclick="location.href='/pages/home_jp.html'">
+    #                   <i class="bi bi-globe" style="font-size: 1.3em; vertical-align: middle;"></i>
+    #                   日本語
+    #                 </button>
+    #               `;
+    #             }
+
+    #             // Add button HTML to the navigation bar
+    #             const buttonDiv = document.createElement('div');
+    #             buttonDiv.innerHTML = buttonHTML;
+    #             navbar.appendChild(buttonDiv);
+
+    #             // Update the navigation bar HTML
+    #             navbar.innerHTML = navbarContent + navbar.innerHTML;
+    #           }
+    #         });
+    #       </script>

@@ -1,0 +1,29 @@
+---
+title: "位相空間"
+bibliography: 
+    - ../../assets/2023.bib
+    - ../../assets/2024.bib
+    - ../../assets/2025.bib
+csl: ../../assets/apalike.csl
+---
+
+{{< include ../../assets/_preamble.qmd >}}
+
+
+$(X,\Op(X))$ を [位相空間](https://ja.wikipedia.org/wiki/%E4%BD%8D%E7%9B%B8%E7%A9%BA%E9%96%93) とする．^[$\Op:\Top\to\Cat$ は関手とみれる．[@斎藤毅-数学原論] 定義4.2.1 p.106, 定義7.1.1 p.192，[category of open subsets](https://ncatlab.org/nlab/show/category+of+open+subsets)．]
+
+* 点 $x\in X$ の（開集合とは限らない） [**近傍**](https://ja.wikipedia.org/wiki/%E8%BF%91%E5%82%8D_(%E4%BD%8D%E7%9B%B8%E7%A9%BA%E9%96%93%E8%AB%96)) の[フィルター](https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF%E3%83%BC_(%E6%95%B0%E5%AD%A6)) を $\cO(x)$ で表す．^[[@Pedersen1989 p.8] 1.2.4 に倣った．[@Bogachev2017] は $\Phi_\tau^x$ で表す．]
+
+* 集合 $A\subset X$ について，$A^\circ$ で [**内部**](https://ja.wikipedia.org/wiki/%E5%86%85%E9%83%A8_(%E4%BD%8D%E7%9B%B8%E7%A9%BA%E9%96%93%E8%AB%96))，$\ov{A}$ で [**閉包**](https://ja.wikipedia.org/wiki/%E9%96%89%E5%8C%85_(%E4%BD%8D%E7%9B%B8%E7%A9%BA%E9%96%93%E8%AB%96))，$\partial A:=\ov{A}\setminus A^\circ$ で [**境界**](https://ja.wikipedia.org/wiki/境界_(位相空間論)) を表す．
+
+* $U\in\Op(X)$ を $U\osub X$ とも表す．
+
+* 閉集合 $F\csub X$ とコンパクト集合 $K\compsub X$ も同様の略記を用いる．
+
+* [**$n$-単体**](https://ncatlab.org/nlab/show/simplex) を
+$$
+\Delta^n:=\Brace{x\in(\R_+)^{n+1}\:\middle|\:\sum_{i=0}^nx^i=1}
+$$
+で表す．
+
+

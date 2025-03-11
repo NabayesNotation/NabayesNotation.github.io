@@ -1,0 +1,56 @@
+---
+title: "確率分布"
+bibliography: 
+    - ../../assets/2023.bib
+    - ../../assets/2024.bib
+    - ../../assets/2025.bib
+csl: ../../assets/apalike.csl
+---
+
+{{< include ../../assets/_preamble.qmd >}}
+
+
+* 可測空間 $(E,\cE)$ 上の **確率測度** の全体を $\cP(E,\cE)$ と書く．$E$ が位相空間であるとき，Borel 確率測度の全体を $\cP(E)$ と略記する．^[[@Jacod-Shiryaev2003 p.347], [@Crisan-Doucet2002], [@Ethier-Kurtz1986 p.96], [@Bogachev2007 p.228] に一致する．[@Kechris1995 p.109], [@Villani2009] はイタリックで $P(E)$ と表す．]
+
+* $E$ を位相空間とする．$(E,\B(E))$ 上の [**Radon 確率測度**](https://ja.wikipedia.org/wiki/%E3%83%A9%E3%83%89%E3%83%B3%E6%B8%AC%E5%BA%A6) の全体を
+$$P(E)\subset\cP(E)$$
+で表す．^[[@Pedersen1989 p.72] に倣った．[@Bogachev2007 p.76] 第7.2節 では $\cP_r(X)$ で表す．Radon 測度とは，[内部正則性](https://ja.wikipedia.org/wiki/%E5%86%85%E9%83%A8%E6%AD%A3%E5%89%87%E6%B8%AC%E5%BA%A6)（＝緊密性） $$\forall_{B\in\B(E)}\;\forall_{\ep>0}\;\exists_{K\compsub B}\;\mu(B\setminus K)<\ep$$ を満たす Borel 測度をいう [@Bogachev2007 pp.68-69] 定義7.1.1, 7.1.4．]
+
+* ２つの確率分布 $\mu,\nu\in\cP(E)$ の [**カップリング**](https://en.wikipedia.org/wiki/Coupling_(probability)) の全体を
+$$
+C(\mu,\nu):=\Brace{\pi\in P(E^2)\:\middle|\:\substack{(\pr_1)_*\pi=\mu,\\(\pr_2)_*\pi=\nu.}}
+$$
+で表す．^[[@Kulik2018] が $\cC$ で表すのに倣った．[@Bogachev2018 p.105], [@Villani2009 p.XXI] では $\Pi(\mu,\nu)$ で，[@Ethier-Kurtz1986 p.96] では $\cM(\mu,\nu)$ で，[@Dudley2002 p.420] 11.8節 は $M(\mu,\nu)$，[@Figalli-Glaudo2023] では $\Gamma(\mu,\nu)$ で表す．[@Bogachev2007 p.235] 8.10(viii)節と [@Villani2009 p.95] 注6.5 に倣い，カップリングの元は Radon なものに限っている点に注意．]
+
+* $d$-次元 [**正規分布**](https://ja.wikipedia.org/wiki/%E6%AD%A3%E8%A6%8F%E5%88%86%E5%B8%83) を
+    $$\rN_d(\mu,\Sigma)\in\cP(\R^d)$$
+    で表す．^[[@竹村彰道2020] の記法に一致する．] その密度は
+    $$
+    \phi_d(x;\mu,\Sigma):=\dd{\rN_d(\mu,\Sigma)}{\ell_d}(x)
+    $$
+    で表す．
+
+* 集合 $A\subset\R^d$ 上の [**一様分布**](https://ja.wikipedia.org/wiki/%E9%80%A3%E7%B6%9A%E4%B8%80%E6%A7%98%E5%88%86%E5%B8%83) を
+$$\rU(A)\in\cP(\R^d)$$
+で表す．
+
+* 点 $x\in E$ 上の [**Delta 測度**](https://ja.wikipedia.org/wiki/%E3%83%87%E3%82%A3%E3%83%A9%E3%83%83%E3%82%AF%E6%B8%AC%E5%BA%A6) を $\delta_x$ で表す．^[Dirac 測度とも言う．[@Jacod-Shiryaev2003 p.68], [@Protter2005 p.299], [@Jacob2001] などは $\ep_x$ で表す．[@Protter2005 p.299] は Dirac 関数を $\delta_x$ で表す．]
+
+* 確率変数 $X\sim\nu\in\cP(\R^d)$ の [**分布関数**](https://ja.wikipedia.org/wiki/%E7%B4%AF%E7%A9%8D%E5%88%86%E5%B8%83%E9%96%A2%E6%95%B0) を
+$$
+\begin{align*}
+    F_X(a)&:=F_\nu(a)\\
+    &:=\P[X_1\le a_1,\cdots,X_d\le a_d]\\
+    &\quad(a=a_{1:d}\in\R^d)
+\end{align*}
+$$
+で表す．
+
+* $d=1$ のとき，その一般化逆を
+$$
+F^-_\nu(u):=\inf\Brace{x\in\R\mid F_\nu(x)\ge u}
+$$
+$$
+(u\in(0,1)^d)
+$$
+で表す．^[[@Gerber+2019] の記法に一致．分位点関数 (quantile function) [@竹村彰道2020 p.16]，確率表現関数 [@森口繁一-確率表現関数] などともいう．[@Dudley2002 p.283] は $X_F$ とも表している．]

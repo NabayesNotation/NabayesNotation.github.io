@@ -1,0 +1,36 @@
+---
+title: "写像"
+bibliography: 
+    - ../../assets/2023.bib
+    - ../../assets/2024.bib
+    - ../../assets/2025.bib
+csl: ../../assets/apalike.csl
+---
+
+{{< include ../../assets/_preamble.qmd >}}
+
+* [集合の圏](https://ja.wikipedia.org/wiki/%E9%9B%86%E5%90%88%E3%81%AE%E5%9C%8F) を $\Set$ で表す．
+
+* $\id_X$ で集合 $X$ 上の [**恒等写像**](https://ja.wikipedia.org/wiki/恒等写像)
+$$
+\id_X(x)=x\quad(x\in X)
+$$
+を表す．^[[@斎藤毅-位相 p.25], [@Jacob2001] に倣った．[@Villani2009] では $\mathrm{Id}$ で表す．]
+
+* 確率空間と確率核の圏を $\Stoch$ で表す．^[[@Fritz2020 p.19], [@Perrone2024] など．[Markov 圏の稿](https://162348.github.io/posts/2023/Probability/MarkovCategory.html#sec-Stoch) も参照]
+
+* [圏](https://ncatlab.org/nlab/show/category) $C$ の対象 $X,Y\in C$ の間の [**射**](https://ja.wikipedia.org/wiki/%E5%B0%84_(%E5%9C%8F%E8%AB%96)) の全体を $\Hom_C(X,Y)$ で表す．^[[nLab](https://ncatlab.org/nlab/show/hom-set) の記法に一致する．[@斎藤毅-数学原論 p.7] では $\Mor_C(X,Y)$ と表す．]
+
+* 特に
+$$
+Y^X=\Map(X,Y)=\Hom_\Set(X,Y).
+$$
+
+* 圏 $C$ の対象 $X\in C$ の自己射の全体を
+$$
+\End_C(X):=\Hom_C(X,X)
+$$
+で表す．
+
+* そのうち可逆なもののなす部分集合を $\Aut_C(X)$ で表す．集合 $[n]$ の [置換群](https://ja.wikipedia.org/wiki/%E7%BD%AE%E6%8F%9B_(%E6%95%B0%E5%AD%A6)) は $\Aut_\Set([n])$ と表せる．
+

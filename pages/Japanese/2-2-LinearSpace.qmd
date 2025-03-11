@@ -1,0 +1,58 @@
+---
+title: "線型空間"
+bibliography: 
+    - ../../assets/2023.bib
+    - ../../assets/2024.bib
+    - ../../assets/2025.bib
+csl: ../../assets/apalike.csl
+---
+
+{{< include ../../assets/_preamble.qmd >}}
+
+* [体](https://ja.wikipedia.org/wiki/%E4%BD%93_(%E6%95%B0%E5%AD%A6)) $\bF$ の元を成分に持つ $(m,n)$-行列の全体を $M_{mn}(\bF)$ で表す．^[[@斎藤毅-位相 p.86], [@斎藤毅-線型代数 p.13], [@Villani2009] に従った．[@Evans2010 p.697] では $\bM^{m\times n}$ で表す．]
+
+* $n$-次の実対称行列の全体を $S_n(\R)$ で表す．^[[@斎藤毅-線型代数 p.19] に一致する．[@Evans2010 p.697] では $\bS^n$ と表す．] $S_n(\R)_+$ で半正定値なものの全体を表す．^[[@Rogers-Williams2000 p.110] V.1.3 では $S_n^+$ の記法が用いられている．]
+
+* 対角成分に $d_1,\cdots,d_n$ を持つ $n$-次正方行列を
+$$
+\diag(d_1,\cdots,d_n):=\begin{pmatrix}d_1&\cdots&0\\
+\vdots&\ddots&\vdots\\0&\cdots&d_n\end{pmatrix}
+$$
+とも表す．^[[@Evans2010 p.697] に一致する．]
+
+* 行列 $A\in M_{mn}(\bF)$ の転置を $A^\top$ で表し，^[[@MacKay2003 p.599] に一致する．[@吉田朋広2006-数理統計] などは転置を $A'$ で表す．[@斎藤毅-位相 p.86] では ${}^t\!A$ と表す．[@Evans2010 p.697] は $A^T$．] 共役転置を $A^*$ で表す．^[随伴行列ともいう [@斎藤毅-位相 p.87]．] $\bF=\bC$ の場合は $A^\top=A^*$．
+
+* 対称行列 $A,B\in S_n(\bC)$ に関して，$A\ge B$ とは，$A-B$ が半正定値であることとする．^[[@Evans2010 p.698] に一致する．]
+
+* $\bF$-線型空間 $X$ の部分集合 $A,B\subset X$ と数 $\lambda\in\bF$ について，
+$$
+\begin{align*}
+    A&+B\\
+    &\quad:=\Brace{a+b\in X\mid a\in A,b\in B},\\
+    \lambda &A:=\Brace{\lambda a\in X\mid a\in A},
+\end{align*}
+$$
+と表す．^[[@Jacob2001] などが触れている．]
+
+* 集合 $A\subset X$ の [**凸包**](https://ja.wikipedia.org/wiki/凸包) を $\Conv(A)$ で表す．^[[@Pedersen1989 p.67] は $\operatorname{conv}(A)$ で表す．[@Conway2007 p.101], [@寒野-土谷2014] は $\operatorname{co}(A)$ と表す．]
+
+* 集合 $A\subset X$ が生成する部分空間を
+$$
+\brac{A}:=\sum_{x\in A}\bF x
+$$
+で表す．^[[@斎藤毅-線型代数 p.33] に倣った．[@Jacob2001] などは $\operatorname{lin}(A)$ で表す．]
+
+* 内積を $(-|-)$ で表す．^[[@Pedersen1989 p.80] に倣った．[@Conway2007 p.2] では $\brac{x,y}$ で表されるが，[@Lang1995-Manifolds p.343] によるとこれは von Neumann の 1950 年代のセミナーでの記法であったという．]
+
+* 行列 $A,B\in M_{mn}(\bC)$ の Hilbert-Schmidt 内積を^[[@Pedersen1989 p.119] は $(-|-)_{\text{tr}}$ で，[@Evans2010 p.697] は $A:B$ で表す．特に，古典力学や有限要素法の文献においては，[二項積](https://ja.wikipedia.org/wiki/%E4%BA%8C%E9%A0%85%E7%A9%8D) の間の演算である二重点乗積を $:$ で表したことから，この記法が用いられる．二項積については [@Abraham+1988 p.341] も参照．]
+$$
+\begin{align*}
+    (B \mi A)_\HS&:=\Tr(A^*B)\\
+    &=\sum_{i=1}^m\sum_{j=1}^na_{ij}b_{ij}
+\end{align*}
+$$
+[Hilbert-Schmidt ノルム](https://ja.wikipedia.org/wiki/ヒルベルト＝シュミット作用素) を
+$$
+\norm{A}_{\HS}:=\abs{A}:=\sqrt{(A|A)_\HS}
+$$
+で表す．^[$\norm{A}_\HS$ は [@Villani2009 p.XVII] に，$\abs{A}$ は [@Evans2010 p.697] に倣った．これは Frobenius ノルムともいう．Hilbert-Schmidt ノルムは，一般の Hilbert 空間上の有界作用素に関して定義される．[@Pedersen1989 p.119] は $\norm{-}_2$ で表す．]

@@ -1,0 +1,71 @@
+---
+title: "数"
+bibliography: 
+    - ../../assets/2023.bib
+    - ../../assets/2024.bib
+    - ../../assets/2025.bib
+csl: ../../assets/apalike.csl
+---
+
+{{< include ../../assets/_preamble.qmd >}}
+
+
+* **自然数** を
+$$
+0:=\emptyset,\quad 1:=\{0\}=0\cup\{0\},
+$$
+$$
+2:=\{0,1\}=1\cup\{1\},
+$$
+$$
+n+1:=n\cup\{n\},
+$$
+によって帰納的に定義する．^[[@vonNeumann1923] による定義である．[@斎藤毅-位相 pp.15-16], [Wikipedia](https://ja.wikipedia.org/wiki/自然数#形式的な定義) とも一致する．]
+
+* 自然数の集合を表すため，次の記法を用意する：^[[@Chopin+2022], [@Srinivasan2001] なども採用している．]
+$$
+[n]:=\{1,\cdots,n\}=n+1\setminus1.
+$$
+
+* $\R_+$ で **非負実数** の全体，^[[@Jacod-Protter2012], [@LeGall2016], [@鎌谷20-モンテカルロ p.106], [@Helemskii2006 p.2], [@Jacob2001] の記法に一致する．[@Evans2010 p.698] では同じ記法で正実数の全体を意味する．] $\R^+$ で **正実数** の全体がなす集合を表す：
+$$
+\R_+=\cointerval{0,\infty},\quad\R^+=(0,\infty).
+$$
+
+* 部分集合 $\bZ,\Q\subset\R$ や $\ov{\R}:=[-\infty,\infty]$ についても同様．特に $\N:=\bZ_+$．^[この運用は [@Jacod-Protter2012] に一致する．記法 $\N$ は [@Villani2009], [@Jacob2001] などでは正整数の全体 $\N=\Brace{1,2,3,\cdots}$ と定められている．[@Jacod-Shiryaev2003] も $\ov{\R}_+=[0,\infty]$ としている．]
+
+* 実数 $x\in\R$ に対して，その整数部分を
+$$
+\floor{x}:=\max\{n\in\bZ\mid n\le x\}
+$$
+と表す．^[[@Jacod-Protter2012] では $[x]$ で表される．]
+
+
+
+* 次の演算規則を約束する：^[[@DelMoral-Penev2014 p.xlviii], [@DelMoral04-FeynmanKacFormulae p.10] の定義に一致する．これは $\prod_{i\in\emptyset}X_i$ が一点集合で，$\coprod_{i\in I}X_i$ が空集合である消息の一般化と見れる．なお，集合 $X$ の部分集合の空な族 $(X_i)_{i\in\emptyset}$ は存在し，それは $\Map(\emptyset,X_i)$ のただ一つの元である．]
+$$
+\prod_\emptyset=1,\quad\sum_{\emptyset}=0.
+$$
+
+* $0!=1$ とする．
+
+
+
+* [**$n$-組**](https://ncatlab.org/nlab/show/tuple) を次のように帰納的に定める：^[[@Kuratowski1921] による定義である．[@Shoenfield1967 p.243], [@新井敏康2011 p.118], [@斎藤毅-位相 定義1.3.1 p.15] の定め方に一致する．また $n$-組を英語では tuple と呼ぶが，全く同じ対象をリスト (list) とも呼ぶ [nLab Concept with an Attitude](https://ncatlab.org/nlab/show/concept+with+an+attitude)．]
+$$
+(x_1,x_2):=\{\{x_1\},\{x_1,x_2\}\},
+$$
+$$
+(x_1,\cdots,x_n):=(x_1,(x_2,\cdots,x_n)).
+$$
+
+* 自然数の組を表すため，次の記法を用意する：^[[@Chopin-Papaspiliopoulos20-SMC], [@Chopin+2022] などが採用している．]
+$$
+1:N:=(1,\cdots,N).
+$$
+
+* 数学的対象 $X_1,\cdots,X_N$ の組を
+$$
+X_{1:N}:=(X_1,\cdots,X_N)
+$$
+と表す．^[これは組 $(X_1,\cdots,X_N)$ が定める $X:[N]\ni i\mapsto X_i$ という写像があった際，この写像の積 $\prod_{i\in[N]}X$ による $1:N$ の像を $X_{1:N}$ と略記する，という意味である．]

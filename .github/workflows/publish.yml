@@ -1,0 +1,69 @@
+on:
+  workflow_dispatch:
+  push:
+    branches: main
+
+name: Quarto Publish
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@main
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@main
+        
+      - name: 'Install TinyTeX'  # https://github.com/quarto-dev/quarto-actions/tree/main/setup
+        env:
+          QUARTO_PRINT_STACK: true
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Setting GH_TOKEN is recommended as installing TinyTeX will query the github API.
+        run: |
+          quarto install tool tinytex --log-level warning
+          case $RUNNER_OS in 
+            "Linux")
+                echo "$HOME/.TinyTeX/bin/x86_64-linux" >> $GITHUB_PATH
+                export PATH="$HOME/.TinyTeX/bin/x86_64-linux:$PATH"
+                ;;
+             "macOS")
+                TLMGR_PATH=$(dirname $(find ~/Library/TinyTeX -name tlmgr))
+                echo $TLMGR_PATH >> $GITHUB_PATH
+                export PATH="$TLMGR_PATH:$PATH"
+                ;;
+             "Windows")
+                TLMGR_PATH=$(dirname $(find $APPDATA/TinyTeX -name tlmgr.bat))
+                echo $TLMGR_PATH >> $GITHUB_PATH
+                export PATH="$TLMGR_PATH:$PATH"
+                ;;
+              *)
+                echo "$RUNNER_OS not supported"
+                exit 1
+                ;;
+          esac
+          echo "TinyTeX installed !"
+          wget https://mirror.ctan.org/systems/texlive/tlnet/update-tlmgr-latest.sh
+          sh update-tlmgr-latest.sh -- --upgrade  # updating local TeX Live
+          tlmgr update --self
+          # tlmgr path add --usermode
+          tlmgr install haranoaji   # Install haranoaji.sty
+        shell: bash
+      
+      - name: Install Japanese Fonts
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Setting GH_TOKEN is recommended as installing TinyTeX will query the github API.
+        run: |
+          git clone https://github.com/yuru7/udev-gothic.git
+          cd udev-gothic
+          sudo cp -r ./source /usr/share/fonts/truetype/udev-gothic
+          sudo fc-cache -f -v
+
+      - name: Render and Publish
+        uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          target: gh-pages
+          # render: false  # https://quarto.org/docs/publishing/github-pages.html#additional-options
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

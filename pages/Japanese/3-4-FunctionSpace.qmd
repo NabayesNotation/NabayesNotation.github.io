@@ -1,0 +1,70 @@
+---
+title: "関数空間"
+bibliography: 
+    - ../../assets/2023.bib
+    - ../../assets/2024.bib
+    - ../../assets/2025.bib
+csl: ../../assets/apalike.csl
+---
+
+{{< include ../../assets/_preamble.qmd >}}
+
+
+関数・確率変数と言った場合，断りがない限り $\R$-値のものを考える．
+
+* 可測空間 $(E,\cE)$ 上の **可測関数** の全体を $\L(E)=\L(E,\cE)$ と書く．^[[@Pedersen1989 2.1.15 p.48] に倣った．[@Dudley2002 p.119] や [@Protter2005 p.52] では $\L^0(E,\cE;\R)$ と表す．[@Dellacherie-Meyer1978] では $\cM(E)$ と表し，$\L_b(\cE)$ を $b(\cE)$ と表す．]
+
+* $(E,\cE)$ の Lebesgue 完備化 $\cE_\mu$ に関して可測な関数を **$\mu$-可測関数** といい，その全体を $\L(\mu)=\L(E,\cE_\mu)$ と書く．^[すなわち，完備化 $\cE_\mu$ について可測な関数の全体をいう．[@Bogachev2007 p.108] 定義2.1.10 では殆ど至る所定義された $\mu$-可測な関数の全体を $\L^0(\mu)$ と表す．$\L(E)$ と $\L(\mu)$ の区別は，完備化 $L(E)$ をしたあとはなくなる．]
+
+* 部分 $\sigma$-代数 $\F\subset\cE$ について，$\F$-可測なもののなす部分集合を $\L_\F(E)=\L(E,\F)$ と表す．
+
+* 測度空間 $(E,\cE,\mu)$ において，$\mu$ に関して殆ど至る所で等しい関数を同一視して得る商空間を $L(\mu)=L(E,\cE,\mu)$ と書く．^[[@Dudley2002] では $L^0(E,\cE;\R,\B(\R))$ と表す．とは言えども，$L(E)$ の元を，その $\L(\mu)$ の元である代表元と同一視することも多い [@Bogachev2007 p.262] 4.4節．[@Dunford-Schwartz1958 p.121] III.3.4 では関数の全体を $L^0_p$，同値類を $L_p$ で表す．]
+
+* この規則は任意の [Lebesgue 空間](https://ja.wikipedia.org/wiki/Lp%E7%A9%BA%E9%96%93) $L^p(\mu)$ で同じである．
+
+* $p\in[1,\infty]$ に関して，[$L^p(E)$ のノルム](https://ja.wikipedia.org/wiki/Lp%E7%A9%BA%E9%96%93#Lp_%E7%A9%BA%E9%96%93) を $\norm{-}_p$ で表す．
+
+* $(T,d)$ を距離空間，$\gamma\in\ocinterval{0,1}$ とする．$T$ 上の [**$\gamma$-Hölder 連続関数**](https://ja.wikipedia.org/wiki/%E3%83%98%E3%83%AB%E3%83%80%E3%83%BC%E6%9D%A1%E4%BB%B6) の全体を $\Lip^\gamma(T,d)$ で表す．^[[@Pedersen1989 p.51] は $\mathrm{lip}^\gamma(T)$，[@Rudin1987 p.113] は $\Lip\gamma$ と表す．$\gamma=1$ の場合，[@DelMoral-Penev2014 p.xliv] の記法に一致する．] $\gamma=1$ の場合はこれを省略して単に $\Lip(T,d)$ と書く．
+
+* その [半ノルム](https://ja.wikipedia.org/wiki/%E5%8D%8A%E3%83%8E%E3%83%AB%E3%83%A0) を
+$$
+\norm{f}_{\Lip^\gamma}:=\sup_{x\ne y}\frac{\abs{f(x)-f(y)}}{d(x,y)^\gamma}
+$$
+と定める．^[[@Evans2010 p.254] では $[f]_{C^{0,\gamma}(T)}$，[@Gilbarg-Trudinger2001 p.52] では $[f]_{\gamma;T}$，[@Pedersen1989 p.51] 演習2.1.10 では $L(f)$，[@Dudley2002 p.390] 11.2節 では $\norm{-}_L$，[@Rudin1987 p.113] 演習11 では $M_f$ と表している．また，$\gamma=1$のとき， [@Evans2010 p.700] では $\Lip[f]$ と表す．]
+
+* Lipschitz 定数が $c$ 以下になる関数のなす部分集合を
+$$
+\begin{align*}
+    &\Lip_c(T,d)\\
+    &:=\Brace{f\in\Lip(T)\mid\norm{f}_\Lip\le c}
+\end{align*}
+$$
+で表す．^[[@Bogachev2007 p.191] 8.3節 に倣った．]
+
+* 有界 $\gamma$-Hölder 連続関数のなす空間 $\Lip_b^\gamma(T,d)$ のノルムを
+$$
+\norm{f}_{\Lip_b^\gamma}:=\norm{f}_{\Lip^\gamma}+\norm{f}_\infty
+$$
+で定める．$\gamma=1$ の場合，$\norm{f}_\BL$ とも表す．^[[@Bogachev2007 p.192] 8.3節, [@Dudley2002 p.390] 11.2節に従った．これにより $\Lip_b(T,d)$ が Banach 代数をなすことが命題11.2.1で示されている．[@Pedersen1989 p.51] 演習2.1.10 によると，このノルムは $I=[a,b]$ が区間のとき，$\nnorm{f}:=\norm{f}_\Lip+\abs{f(a)}$ に同値．]
+
+* $T$ を位相空間とする．$T$ 上の連続関数の全体を $C(T)$ で表す．
+
+* $E$ を可微分多様体とする．$k\in\N^+\cup\{\infty\}$ 回連続微分可能な関数がなす $C(E)$ の部分空間を，
+$$
+C^k(E):=\Brace{f\in C^k(E)\:\middle|\:\substack{ f\;\text{は}\;k\;\text{回微分可能}\\\forall_{1\le l\le k}\;f^{(l)}\in C(E)}}
+$$
+を表す．
+
+* さらに $C_b^k(E),C_c^k(E),C_p^k(E)$ と表した場合は，その $k$ 回までの導関数も同様に $C_b,C_c,C_p$ に含まれるとする．^[[@Nualart2018 p.1] に倣った．]
+
+* $E$ は距離空間でもあるとする．$\gamma\in\ocinterval{0,1}$ に対して，$k$ 階連続微分可能で，全ての $k$ 回までの導関数も有界で $\gamma$-Hölder 連続な関数のなす $C^k_b(E)$ の部分空間を $C^{k,\gamma}(E)$ で表し，ノルムを
+$$
+\begin{align*}
+    \norm{u}_{C^{k,\gamma}(E)}&:=\sum_{\abs{\al}\le k}\norm{D^\al u}_\infty\\
+    &\qquad+\sum_{\abs{\al}=k}\norm{D^\al u}_{\Lip^\gamma}
+\end{align*}
+$$
+で定める．$C^{k,\gamma}(E)$ を [**Hölder 空間**](https://encyclopediaofmath.org/wiki/H%C3%B6lder_space) と言う．^[[@Evans2010 p.255] に従った．]
+
+イタリック体のものが Banach 空間（の部分集合）に，カリグラフィー体のものがより一般的なものになるように注意している．^[例えば，コンパクト空間 $K$ について，Radon 確率測度全体の集合 $P(X)$ は $C(X)^*$ の $w^*$-コンパクトな凸部分集合である [@Pedersen1989 pp.72-73] 命題2.5.7．]
+

@@ -1,0 +1,77 @@
+---
+title: "写像"
+bibliography: 
+    - ../../assets/2023.bib
+    - ../../assets/2024.bib
+    - ../../assets/2025.bib
+csl: ../../assets/apalike.csl
+---
+
+{{< include ../../assets/_preamble.qmd >}}
+
+$X,Y$ を集合，$f:X\to Y$ を写像とする．
+
+* 引数のプレイスホルダーとして $-$ や $\cdot$ を用い，$f(-),f(\cdot)$ などと表す．
+
+* 写像 $f$ の [**値域**](https://ja.wikipedia.org/wiki/%E5%80%A4%E5%9F%9F) を
+$$\Im f:=f(X)$$
+で表す．
+
+* $A\subset X$ への [**制限**](https://ja.wikipedia.org/wiki/制限_(数学)) を $f|_A:A\to Y$ と表す．^[[@新井敏康2011 p.119] などでは，$f\restriction_A$ とも表す．]
+
+* $A\subset X$ の **像** を $f(A)$ で表し，これが集合であることを特に明示する際は $f_*(A)$ とも表す．^[[@斎藤毅-位相 p.43], [@斎藤毅-数学原論 p.12] に従った．対応 $f\mapsto f_*$ は共変関手 $P_*:\Set\to\Set$ を定める．]
+
+* $f_*$ は部分集合 $A\subset X$ を像 $f(A)\subset Y$ に対応させる写像
+$$
+f_*:P(X)\to P(Y)$$
+と定義する．
+
+* 同様に写像 $f^*:P(Y)\to P(X)$ を定める：
+$$
+f^*(B)=f^{-1}(B)\quad(B\subset Y).
+$$
+
+* 部分集合 $A\subset X$ の [**特性関数**](https://ja.wikipedia.org/wiki/%E6%8C%87%E7%A4%BA%E9%96%A2%E6%95%B0) を $1_A:X\to2$ で表す．^[[@斎藤毅-位相 p.25], [@Evans2010 p.700] などでは $\chi_A$ と表す．]
+
+* 部分集合 $A\subset X$ の **指示関数** といった場合は
+  $$
+  \sigma_A:=0\cdot1_A+\infty\cdot1_{A^\comp}
+  $$
+  を表す．^[[@Brezis2011 p.14] の使い分けに倣った．支持関数は英語で indicator function という [@Beck2017 p.14] 例2.1，[@寒野-土谷2014 p.110]，[@Ekeland-Temam1999 p.8]．]
+
+* 写像 $f:X\to Y$ の全体がなす集合を $Y^X$ または $\Map(X,Y)$ で表す．^[これは[配置集合](https://ja.wikipedia.org/wiki/%E9%85%8D%E7%BD%AE%E9%9B%86%E5%90%88)とも言う．$Y^X$ は [@松坂68 p.38], [@Gine-Nickl2021] に，$\Map(X,Y)$ は [@斎藤毅-位相 p.26] に倣った．[@新井敏康2011 p.120] は ${}^XY$と表す．]
+
+* 写像 $f:X\to Y$ のうち，有限個の元を除いて $f(x)=0$ を満たすものがなす全体を
+$$
+Y^{(X)}:=\Brace{f\in Y^X\mid f=0\;\fe}
+$$
+と表す．^[[@斎藤毅-線型代数 例1.4.7 p.20] に従った．また f.e. とは with a finite number of exceptions の略で，「有限個の例外を除いて成り立つ」という意味である [@伊藤清1991 p.124]．]
+
+* $P(X)$ を $2^X$ と同一視する．特に，$X$ の有限部分集合の全体を
+$$
+2^{(X)}=\Brace{A\in P(X)\:\middle|\: A\fsub X}
+$$
+と表す．^[[@斎藤毅-位相 p.179] では $F(X)$ と表記している．]
+
+* [**全射**](https://ja.wikipedia.org/wiki/%E5%85%A8%E5%B0%84) を $f:X\epi Y$，[**単射**](https://ja.wikipedia.org/wiki/%E5%8D%98%E5%B0%84) を $f:X\mono Y$ で強調して表すことがある．^[[nLab](https://ncatlab.org/nlab/show/monomorphism) に倣った．本来はエピ射とモノ射を表す記法であるが，ここでは集合の圏 $\Set$ に限ることとする．]
+
+* [**全単射**](https://ja.wikipedia.org/wiki/%E5%85%A8%E5%8D%98%E5%B0%84) が特に特定の圏での [**同型射**](https://ncatlab.org/nlab/show/isomorphism) でもある場合 $f:X\iso Y$ と強調して表すことがある．
+
+* 積空間 $\prod_{i\in I}X_i$ からの [**第 $i$ 射影**](https://ja.wikipedia.org/wiki/%E5%B0%84%E5%BD%B1_(%E9%9B%86%E5%90%88%E8%AB%96)) を
+$$
+\pr_i:\prod_{i\in I}X_i\epi X_i
+$$
+で表す．^[[@Billingsley1999], [@Ethier-Kurtz1986], [@Jacob2001] などは $\pi_i$ で表す．]
+
+* $x\in X$ での [**評価写像**](https://ncatlab.org/nlab/show/evaluation+map) を
+$$
+\ev_x:Y^X\epi Y
+$$ で表す．^[[@斎藤毅-位相 p.27] では値写像と訳している．]
+
+* 写像 $I\ni i\mapsto X_i$ を **族** とも呼び，$(X_i)_{i\in I}$ と表す．
+
+* しかしこの写像の値域も **族** と呼び，この場合は
+$$\{X_i\}_{i\in I}:=\Im(X_i)_{i\in I}$$
+と表す．^[[@斎藤毅-位相 p.26] に倣った．この混用については p.35 で触れられている．これが集合をなすのは，ZF公理系のうちの置換公理による [@新井敏康2011 p.118]．] 
+
+* 特に $I=\N$ のときは **列** ともいう．$I\fsub\N$ のときは組と同一視する．^[[@斎藤毅-位相 p.37] にも詳しく解説されている．このような態度は [concept with an attitude](https://ncatlab.org/nlab/show/concept+with+an+attitude) という．]

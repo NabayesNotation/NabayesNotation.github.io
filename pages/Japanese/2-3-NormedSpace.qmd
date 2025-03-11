@@ -1,0 +1,53 @@
+---
+title: "ノルム空間"
+bibliography: 
+    - ../../assets/2023.bib
+    - ../../assets/2024.bib
+    - ../../assets/2025.bib
+csl: ../../assets/apalike.csl
+---
+
+{{< include ../../assets/_preamble.qmd >}}
+
+* 任意の集合 $J$ に関して，$\R$ の Banach 空間としての [**$l^p$-直和**](https://ncatlab.org/nlab/show/direct+sum+of+Banach+spaces#definitions) を $l^p(J)$ で表し，ノルムを $\norm{-}_p$ で表す．^[[@Pedersen1989 p.50] に倣った．] $J=\N$ のとき，単に $l^p$ とも表す．
+
+* 特に $J$ が有限であるとき，
+    $$
+    \norm{x}_p=\paren{\sum_{j\in J}\abs{x_j}^p}^{1/p}\quad(x\in\R^{\abs{J}})
+    $$
+    となり，$p=2$ の場合は $\abs{x}:=\norm{x}_2$ とも表す．^[[@Evans2010 p.699], [@Jacob2001 p.xvi], [@Bakry+2014 p.xv] に倣った．]
+
+* 特に，$l^\infty(J)$ 上で $J$ 上の有界な関数全体の集合を表す．^[[@Pedersen1989 p.50] に一致する．[@Gine-Nickl2021 p.17] は $\ell_\infty(J)$ で表す．]
+
+* 距離空間 $(T,d)$ の **開球** を
+$$
+\begin{align*}
+    U_\ep(t)&:=U(t;\ep)\\
+    &:=\Brace{s\in T\mid d(s,t)<\ep}
+\end{align*}
+$$
+で表す．^[[@斎藤毅-位相 p.75] に従った．[@Rudin-FunctionalAnalysis p.4], [@Jacob2001] では $B_r(t)$ で表す．]
+
+* **閉球** を $B_\ep(t)=B(t;\ep)$ で表す．^[[@Pedersen1989 p.44], [@Evans2010 p.699] に倣った．]
+
+* **単位閉球**を $B:=B(0;1)$ で表す．
+
+* $\R^n$ のものである場合は特に $B^n$ とも表す．^[[@Pedersen1989 p.41] など．]
+
+* $\R^n$ の標準基底を
+$$
+e_i=(0,\cdots,0,1,0,\cdots,0)
+$$
+と表す．^[[@Evans2010 p.698] に一致．]
+
+* Banach空間 $X$ の双対空間 $X^*$ のものは $B^*$ とも表す．^[[@Pedersen1989 2.5.1 p.70] など．]
+
+* 集合 $A\subset T$ と $\ep>0$ に対して，その $\ep$-開近傍を
+$$
+A_\ep:=\Brace{x\in T\mid d(x,A)<\ep}
+$$
+で表す．^[[@Boucheron+2013] に倣った．ここでは $t$-blowup と呼んでいる．[@Gine-Nickl2021 p.27] では $d(x,A)\le\ep$ と定義しているが，我々は同じものを $\ov{A_\ep}$ で表すこととする．[@Dudley2002 p.393], [@Bogachev2007 p.192] では $A^\ep$ で表し，[@Dudley2002 p.407] は閉集合バージョンを $A^{\delta]}$ で表す．]
+
+
+
+以降も，ある記号 $\F$ に関して $\F(x;y)$ と表される記法は， $\F_y(x)$ として理解できる数学的対象の別記法と捉えられるように設計する．^[すなわち， $\F(x;y)$ という記法は，$y$ は写像（あるいは関手） $\F$ のパラメータ付けをする添字として理解する数学的対象，$x$ は写像（あるいは関手）の引数として理解する数学的対象として峻別する．]
