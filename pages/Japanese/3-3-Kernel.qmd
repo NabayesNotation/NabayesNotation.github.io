@@ -68,7 +68,7 @@ $$
 $$
 で定める．^[こちらも，行列積の一般化であることを踏まえて [@Kallenberg2017 p.16] の呼び方に従った．[@Gikhman-Skorokhod2004I p.79] では **畳み込み** と呼ばれている．この式は [Chapman-Kolmogorov 方程式](https://en.wikipedia.org/wiki/Chapman%E2%80%93Kolmogorov_equation) と呼ばれるものである．そこで，Chapman-Kolmogorov 方程式は，Markov 核の族 $\{P_t\}_{t\in\R_+}$ が，この積という演算について半群性を満たす，という形の条件でよく登場する．]
 
-::: {.callout-caution title="確率核の概念" icon="false" collapse="true"}
+::: {.callout-caution title="確率核の概念" icon="false" collapse="false"}
 
 確率核は積に関して結合的で，$I(x,A):=\delta_x(A)$ を単位元に持ち，[可測空間と確率核の圏](https://en.wikipedia.org/wiki/Markov_kernel#Composition_of_Markov_Kernels_and_the_Markov_Category) $\Stoch$ をなす．これは $(1,2)$ を [終対象](https://ja.wikipedia.org/wiki/%E5%A7%8B%E5%AF%BE%E8%B1%A1%E3%81%A8%E7%B5%82%E5%AF%BE%E8%B1%A1) とする [Markov 圏](https://162348.github.io/posts/2023/Probability/MarkovCategory.html#sec-Stoch) である．
 
